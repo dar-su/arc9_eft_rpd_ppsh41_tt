@@ -983,6 +983,19 @@ SWEP.Animations = {
                 { s = randspin, t = 5.5 },
             },
         },
+        
+        ["enter_bipod"] = {
+            Source = "mod_switch",
+        },
+        ["exit_bipod_empty"] = {
+            Source = "mod_switch_empty",
+        },
+        ["exit_bipod"] = {
+            Source = "mod_switch",
+        },
+        ["exit_bipod_empty"] = {
+            Source = "mod_switch_empty",
+        },
     }
 
 ------------------------- [[[           Attachments            ]]] -------------------------
