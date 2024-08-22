@@ -641,6 +641,10 @@ local neverlhik = {
     { t = 1, lhik = 0 },
 } 
 
+local bipodpath = "weapons/darsu_eft/bipod/"
+SWEP.EnterBipodSound = false 
+SWEP.ExitBipodSound = false
+
 SWEP.Animations = {
         ["idle"] = {
             Source = "idle",
@@ -985,16 +989,30 @@ SWEP.Animations = {
         },
         
         ["enter_bipod"] = {
-            Source = "mod_switch",
+            Source = "action",
+            EventTable = {
+                { s = { bipodpath .. "bipod_rpd_unfold_1.ogg", bipodpath .. "bipod_rpd_unfold_2.ogg", bipodpath .. "bipod_rpd_unfold_3.ogg" }, t = 0.0 },
+                { s = { bipodpath .. "bipod_stand_on_1.ogg", bipodpath .. "bipod_stand_on_2.ogg", bipodpath .. "bipod_stand_on_3.ogg", bipodpath .. "bipod_stand_on_4.ogg", bipodpath .. "bipod_stand_on_5.ogg" }, t = 0.2 },
+            }
         },
-        ["exit_bipod_empty"] = {
-            Source = "mod_switch_empty",
+        ["enter_bipod_empty"] = {
+            Source = "action_empty",
+            EventTable = {
+                { s = { bipodpath .. "bipod_rpd_unfold_1.ogg", bipodpath .. "bipod_rpd_unfold_2.ogg", bipodpath .. "bipod_rpd_unfold_3.ogg" }, t = 0.0 },
+                { s = { bipodpath .. "bipod_stand_on_1.ogg", bipodpath .. "bipod_stand_on_2.ogg", bipodpath .. "bipod_stand_on_3.ogg", bipodpath .. "bipod_stand_on_4.ogg", bipodpath .. "bipod_stand_on_5.ogg" }, t = 0.2 },
+            }
         },
         ["exit_bipod"] = {
-            Source = "mod_switch",
+            Source = "action",
+            EventTable = {
+                { s = { bipodpath .. "bipod_rpd_fold_1.ogg", bipodpath .. "bipod_rpd_fold_2.ogg", bipodpath .. "bipod_rpd_fold_3.ogg" }, t = 0.0 },
+            }
         },
         ["exit_bipod_empty"] = {
-            Source = "mod_switch_empty",
+            Source = "action_empty",
+            EventTable = {
+                { s = { bipodpath .. "bipod_rpd_fold_1.ogg", bipodpath .. "bipod_rpd_fold_2.ogg", bipodpath .. "bipod_rpd_fold_3.ogg" }, t = 0.0 },
+            }
         },
     }
 
@@ -1260,7 +1278,7 @@ SWEP.Hook_ModifyBodygroups = function(swep, data)
     local els = data.elements
 
     if els["eft_rpd_bipod"] and swep:GetBipod() then
-        if swep:GetEnterBipodTime() + 0.2 < CurTime() then
+        if swep:GetEnterBipodTime() + 0.1 < CurTime() then
             data.model:SetBodygroup(5, 2)
         end
     end
@@ -1269,9 +1287,6 @@ SWEP.Hook_ModifyBodygroups = function(swep, data)
         data.model:SetBodygroup(7, 2)
     end
 end
-
-SWEP.EnterBipodSound = path .. "rpd_sight_mount_out.ogg" 
-SWEP.ExitBipodSound = path .. "rpd_sight_mount_in.ogg"
 
 -- ewww
 DEFINE_BASECLASS(SWEP.Base)
