@@ -558,7 +558,7 @@ SWEP.Animations = {
     },
 
     ["fire"] = {
-        Source = "fire",
+        Source = {"fire_0", "fire_1", "fire_2"},
         IKTimeLine = alwayslhik,
         EventTable = {
             { s = path .. "ash12_trigger_hammer.ogg", t = 0 },
