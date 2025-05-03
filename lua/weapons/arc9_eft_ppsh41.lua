@@ -5,21 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_ppsh41", "PPSh-41", "en")
-ARC9:AddPhrase("eft_weapon_ppsh41", "ППШ-41", "ru")
-ARC9:AddPhrase("eft_weapon_ppsh41", "PP shhh 41", "uwu")
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_ppsh41")
-SWEP.Description = [[The PPSh-41 (Pistolet-Pulemyot Shpagina - "Shpagin's submachine gun") is a Soviet submachine gun designed by Georgy Shpagin as a cheap, reliable, and simplified alternative to the PPD-40.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_ppsh41_alt")
+SWEP.Description = "eft_weapon_ppsh41_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_smg")
+SWEP.Class = "eft_class_weapon_smg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_smg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Numerous",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "7.62x25mm Tokarev",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"] = ARC9:GetPhrase("eft_trivia_act_blow"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1940"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_numerous",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_762x25",
+    ["eft_trivia_act3"] = "eft_trivia_act_blow",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1940"
 }
 
 SWEP.StandardPresets = false 

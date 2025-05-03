@@ -5,24 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_rpd", "RPD", "en")
-ARC9:AddPhrase("eft_weapon_rpd", "РПД", "ru")
-ARC9:AddPhrase("eft_weapon_rpd", "WPD", "uwu")
-ARC9:AddPhrase("eft_weapon_rpdn", "RPDN", "en")
-ARC9:AddPhrase("eft_weapon_rpdn", "РПДН", "ru")
-ARC9:AddPhrase("eft_weapon_rpdn", "WPDN", "uwu")
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_rpd")
-SWEP.Description = [[The Degtyarev hand-held machine gun chambered in 7.62x39 caliber. This machine gun was adopted by the Soviet Army and was used as a means of reinforcing infantry squads and platoons from the late forties to the early sixties. The RPD is elegantly designed, resulting in a compact, reliable and quite powerful fire support weapon. Manufactured by V.A. Degtyarev Plant.]]
+SWEP.Description = "eft_weapon_rpd_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_lmg")
+SWEP.Class = "eft_class_weapon_lmg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_lmg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Degtyaryov Plant",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "7.62x39mm",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"] = ARC9:GetPhrase("eft_trivia_act_gas"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1944"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_degtyaryov",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_762x39",
+    ["eft_trivia_act3"] = "eft_trivia_act_gas",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1944"
 }
 
 SWEP.StandardPresets = {

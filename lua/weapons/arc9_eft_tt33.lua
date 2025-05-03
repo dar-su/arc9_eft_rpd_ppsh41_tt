@@ -5,21 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_tt33", "TT-33", "en")
-ARC9:AddPhrase("eft_weapon_tt33", "ТТ-33", "ru")
-ARC9:AddPhrase("eft_weapon_tt33", "TwT-33", "uwu")
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_tt33")
-SWEP.Description = [[A legendary pistol that has seen numerous military conflicts throughout the years and is still in service in certain regions of the world, in one variation or another. This one is a classic TT-33, the most mass-produced version. It features a Browning short-recoil tilting-barrel system, but other than that, the construction design is very unique - it is purposefully simple, single-action, and no safety measures except half-cock notch, which makes it be able to withstand horrible operating abuse. Thanks to the powerful 7.62x25 cartridge and relatively long barrel, the TT boasts high muzzle velocity, penetration, and impressive accuracy, even over long distances.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_tt")
+SWEP.Description = "eft_weapon_tt_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_pist")
+SWEP.Class = "eft_class_weapon_pist"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("eft_trivia_manuf_tula"),
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "7.62x25mm Tokarev",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_recoil"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1930"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_tula",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_762x25",
+    ["eft_trivia_act3"]= "eft_trivia_act_recoil",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1930"
 }
 
 SWEP.StandardPresets = {
@@ -194,6 +191,18 @@ SWEP.CamQCA_Mult = 0.35
 SWEP.MuzzleParticle = "muzzleflash_pistol" -- Used for some muzzle effects.
 SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/762x25tt.mdl"
 SWEP.ShellSounds = ARC9EFT.Shells9mm
+
+SWEP.HookP_NameChange = function(self, name)
+    local elements = self:GetElements()
+
+    if elements["eft_tt33_gold"] then return ARC9:GetPhrase("eft_weapon_ttgold") end
+end
+
+SWEP.HookP_DescriptionChange = function(self, desc)
+    local elements = self:GetElements()
+
+    if elements["eft_tt33_gold"] then return "eft_weapon_ttgold_desc" end
+end
 
 ------------------------- |||           Sounds            ||| -------------------------
 
