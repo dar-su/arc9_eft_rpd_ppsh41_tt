@@ -224,6 +224,8 @@ SWEP.ExitSightsSound = ARC9EFT.ADSMachineGun
 
 ------------------------- |||           Dropped magazines            ||| -------------------------
 
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineTime = 0.65
 SWEP.DropMagazineQCA = 4
@@ -1043,6 +1045,12 @@ SWEP.DropMagazineVelocityHook = function(swep, old)
     if swep:GetReloading() then return funnyvec end
     return funnyvec2
 end
+
+SWEP.DynamicConditions = {
+    ["Recoil"] = true,
+    ["DropMagazineModel"] = true,
+    ["DropMagazineVelocity"] = true,
+}
 
 -- fake bipod
 SWEP.Hook_ModifyBodygroups = function(swep, data)
